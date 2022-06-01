@@ -25,23 +25,14 @@ namespace RandomizedAlgo{
         where a and b are uniform
         Use of bigInt here allows 
         */
-        public func<ulong, ulong> mulModPrime(bigint a, bigint b, int l, int s = 89){
-            bigint p = ((bigint)1<<q)-1;
-            bigint m = ((bigint)1<<l);
+        public func<ulong, ulong> mulModPrime(bigint a, bigint b, int l = 5, int s = 89){
+            bigint p = ((bigint)1<<s)-1;
+            bigint m = ((bigint)1<<l)-1;
             if (a < p && b < p && l < 64){
-                return 1; //need to edit this
+                return new func<ulong, ulong>((((a*x)+b)& p)+(((a*x)+b)>>s));
             }else{
                 throw new Exception("Does not work");
             }
         }
-
-
-
-
-
-
-
-
-        
     }
 }
