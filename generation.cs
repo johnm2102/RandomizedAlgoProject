@@ -1,7 +1,12 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Numerics;
+
+
 namespace RandomizedAlgo{
     class Generation{
-        public static async IEnumerable<Tuple<ulong,int>> CreateStream(int n, int l){
+        public static IEnumerable<Tuple<ulong,int>> CreateStream(int n, int l){
             //generating a random uint64 number
             Random rnd = new System.Random();
             ulong a = 0UL;

@@ -1,4 +1,5 @@
 using System;
+using System.Numerics;
 /*
 This goal of this program is to implement multiply shift and 
 multiply-mod-hashing
@@ -13,8 +14,8 @@ namespace RandomizedAlgo{
             h(x) = (a*x)>>(64-l),
             where a is an uneven 64 bit number 
         */
-        public func<ulong, ulong> mulShift(ulong a, int l = 5){
-            return new func<ulong, ulong>(x => ((a * x) >> (64 - l)));
+        public static Func<ulong, ulong> mulShift(ulong a, int l = 5){
+            return new Func<ulong, ulong>(x => ((a * x) >> (64 - l)));
         }
 
         /*
@@ -25,11 +26,11 @@ namespace RandomizedAlgo{
         where a and b are uniform
         Use of bigInt here allows 
         */
-        public func<ulong, ulong> mulModPrime(bigint a, bigint b, int l = 5, int s = 89){
-            bigint p = ((bigint)1<<s)-1;
-            bigint m = ((bigint)1<<l)-1;
+        public Func<ulong, ulong> mulModPrime(BigInteger a, BigInteger b, int l = 5, int s = 89){
+            BigInteger p = ((BigInteger)1<<s)-1;
+            BigInteger m = ((BigInteger)1<<l)-1;
             if (a < p && b < p && l < 64){
-                return new func<ulong, ulong>((((a*x)+b)& p)+(((a*x)+b)>>s));
+                return new Func<ulong, ulong>((((a*x)+b)& p)+(((a*x)+b)>>s));
             }else{
                 throw new Exception("Does not work");
             }
