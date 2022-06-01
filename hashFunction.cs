@@ -31,7 +31,7 @@ namespace RandomizedAlgo{
             if (a < p && b < p && l < 64){
                 return 1; //need to edit this
             }else{
-                return 0; //needs to return false
+                throw new Exception("Does not work");
             }
         }
 
