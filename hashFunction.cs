@@ -23,8 +23,9 @@ namespace RandomizedAlgo{
         p and where l is a positive number less than 64. More precisely:
             h(x) = ((a*x + b) mod p) mod 2^l
         where a and b are uniform
+        Use of bigInt here allows 
         */
-        public func<ulong, ulong> mulModPrime(){
+        public func<ulong, ulong> mulModPrime(bigint a, bi){
 
         }
 
