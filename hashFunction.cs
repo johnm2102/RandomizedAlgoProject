@@ -13,7 +13,7 @@ namespace RandomizedAlgo{
             h(x) = (a*x)>>(64-l),
             where a is an uneven 64 bit number 
         */
-        public func<ulong, ulong> mulShift(ulong a, int l){
+        public func<ulong, ulong> mulShift(ulong a, int l = 5){
             return new func<ulong, ulong>(x => ((a * x) >> (64 - l)));
         }
 
@@ -24,7 +24,11 @@ namespace RandomizedAlgo{
             h(x) = ((a*x + b) mod p) mod 2^l
         where a and b are uniform
         */
-        
+        public func<ulong, ulong> mulModPrime(){
+
+        }
+
+
 
 
 
